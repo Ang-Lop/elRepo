@@ -24,13 +24,30 @@ class personClass:
         self.name = name
 
 
+class studentClass(personClass):
+    def __init__(self, name="John Hancock", age=63, clas ="None"):
+        personClass.__init__(self, name, age)
+        self.clas = clas
+    def classCheck(self):
+        print("I'm currently taking "+self.clas)
+    def classSet(self, clas):
+        self.clas = clas
+    def checkAll(self):
+        self.classCheck()
+        self.nameCheck()
+        self.ageCheck()
 
 
 
-person1 = personClass()
-person1.ageCheck()
-person1.nameCheck()
-person1.nameSet("Peter Parker")
-person1.ageSet(21)
-person1.ageCheck()
-person1.nameCheck()
+
+person2 = studentClass()
+person2.checkAll()
+person2.classSet("ComSci 1")
+person2.checkAll()
+#person1 = personClass()
+#person1.ageCheck()
+#person1.nameCheck()
+#person1.nameSet("Peter Parker")
+#person1.ageSet(21)
+#person1.ageCheck()
+#person1.nameCheck()
